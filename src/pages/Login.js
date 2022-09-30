@@ -12,8 +12,6 @@ class Login extends React.Component {
 
   verificarLogin = () => {
     const { email, password } = this.state;
-    // const verificarArroba = email.includes('@');
-    // const verificarPontoCom = email.includes('.com');
     const validacaoEmail = /\S+@\S+\.\S+/;
     const verificarEmail = validacaoEmail.test(email);
     const minSenha = 6;
