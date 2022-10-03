@@ -19,3 +19,25 @@ export const fetchCurrencies = () => async (dispatch) => {
   const novoArray = dataArray.filter((cadaUma) => cadaUma !== 'USDT');
   dispatch(actGetCurrencies(novoArray));
 };
+
+export const FILTER_CURRENCIES = 'FILTER_CURRENCIES';
+
+export const actFilterCurrencies = (item) => ({
+  type: FILTER_CURRENCIES,
+  item,
+});
+
+export const chosenCurrency = (item) => async (dispatch) => {
+  const endpoint = 'https://economia.awesomeapi.com.br/json/all';
+  const fetchAllCurrencies = await fetch(endpoint);
+  const data = await fetchAllCurrencies.json();
+  item.exchangeRates = data;
+  dispatch(actFilterCurrencies(item));
+};
+
+export const SUM_VALUES = 'SUM_VALUES';
+
+export const sumValues = (valor) => ({
+  type: SUM_VALUES,
+  valor,
+});

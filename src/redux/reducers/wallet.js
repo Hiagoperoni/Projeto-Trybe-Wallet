@@ -1,4 +1,4 @@
-import { GET_CURRENCIES } from '../actions/index';
+import { GET_CURRENCIES, FILTER_CURRENCIES, SUM_VALUES } from '../actions/index';
 
 const WALLET_INICIAL = {
   wallet: {
@@ -14,6 +14,14 @@ const currenciesReducer = (state = WALLET_INICIAL, action) => {
   case GET_CURRENCIES: {
     state.wallet.currencies.push(...action.currencies);
     return state.wallet;
+  }
+  case FILTER_CURRENCIES: {
+    const novoExpense = state.expenses;
+    novoExpense.push(action.item);
+    return { ...state, expenses: novoExpense };
+  }
+  case SUM_VALUES: {
+    return { ...state, valorTotal: action.valor };
   }
   default:
     return state;
