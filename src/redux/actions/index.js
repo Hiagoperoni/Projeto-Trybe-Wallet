@@ -41,3 +41,10 @@ export const sumValues = (valor) => ({
   type: SUM_VALUES,
   valor,
 });
+
+export const DEL_EXPENSE = 'DEL_EXPENSE';
+
+export const deleteExpense = (novaLista) => ({
+  type: DEL_EXPENSE,
+  novaLista,
+});

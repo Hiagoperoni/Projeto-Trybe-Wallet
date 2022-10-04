@@ -22,7 +22,7 @@ function mapStateToProps(state) {
 
 Header.propTypes = {
   user: PropTypes.shape({ email: PropTypes.string.isRequired }).isRequired,
-  somarTodos: PropTypes.string.isRequired,
+  somarTodos: PropTypes.number.isRequired,
 };
 
 export default connect(mapStateToProps)(Header);
