@@ -91,7 +91,7 @@ class WalletForm extends Component {
           >
             {
               currencies.map((cadaMoeda) => (
-                <option key={ cadaMoeda }>
+                <option key={ `Moeda: ${cadaMoeda}` }>
                   {cadaMoeda}
                 </option>
               ))
