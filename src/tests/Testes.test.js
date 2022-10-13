@@ -391,5 +391,9 @@ describe('Página principal', () => {
     expect(hamburguer).toBeInTheDocument();
     const valor = screen.getByRole('cell', { name: /30\.00/i });
     expect(valor).toBeInTheDocument();
+    const botaoExcluir = screen.getByRole('button', { name: /excluir/i });
+    expect(botaoExcluir).toBeInTheDocument();
+    userEvent.click(botaoExcluir);
+    expect(hamburguer).not.toBeInTheDocument();
   });
 });
