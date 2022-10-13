@@ -90,8 +90,8 @@ class WalletForm extends Component {
             onChange={ this.changeState }
           >
             {
-              currencies.map((cadaMoeda) => (
-                <option key={ `Moeda: ${cadaMoeda}` }>
+              currencies.map((cadaMoeda, index) => (
+                <option key={ `Moeda: ${cadaMoeda}, ${index}` }>
                   {cadaMoeda}
                 </option>
               ))
